@@ -3,23 +3,49 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	 xmlns:p="urn:import:com.vaadin.polymer.paper.widget"
          xmlns:i="urn:import:com.vaadin.polymer.iron.widget">
-
-	<g:HTMLPanel>
-		<p:PaperIconItem ui:field="menuClearAll">
-        <i:IronIcon icon="delete" attributes="item-icon"/>
-        <div>Clear All</div>
-    </p:PaperIconItem>
-    <p:PaperIconItem ui:field="menuClearDone">
-        <i:IronIcon icon="clear" attributes="item-icon"/>
-        <div>Clear Done</div>
-    </p:PaperIconItem>
-    <p:PaperIconItem ui:field="menuSettings">
-        <i:IronIcon icon="settings" attributes="item-icon"/>
-        <div>Settings</div>
-    </p:PaperIconItem>
-    <p:PaperIconItem ui:field="menuAbout">
-        <i:IronIcon icon="help" attributes="item-icon"/>
-        <div>About</div>
-    </p:PaperIconItem>
-	</g:HTMLPanel>
+	 <ui:style>
+     paper-icon-item {
+       position: relative;
+     }
+  </ui:style>
+	 <g:HTMLPanel>
+    <p:PaperDrawerPanel ui:field="drawerPanel">
+        <div drawer="">
+            <p:PaperHeaderPanel mode="seamed">
+                <p:PaperToolbar/>
+                <p:PaperIconItem ui:field="menuClearAll">
+                    <i:IronIcon icon="delete" attributes="item-icon"/>
+                    <div>Clear All</div>
+                    <p:PaperRipple/>
+                </p:PaperIconItem>
+                <p:PaperIconItem ui:field="menuClearDone">
+                    <i:IronIcon icon="clear" attributes="item-icon"/>
+                    <div>Clear Done</div>
+                    <p:PaperRipple/>
+                </p:PaperIconItem>
+                <p:PaperIconItem ui:field="menuSettings">
+                    <i:IronIcon icon="settings" attributes="item-icon"/>
+                    <div>Settings</div>
+                    <p:PaperRipple/>
+                </p:PaperIconItem>
+                <p:PaperIconItem ui:field="menuAbout">
+                    <i:IronIcon icon="help" attributes="item-icon"/>
+                    <div>About</div>
+                    <p:PaperRipple/>
+                </p:PaperIconItem>
+            </p:PaperHeaderPanel>
+        </div>
+        <div main="">
+            <p:PaperHeaderPanel mode="seamed">
+                <p:PaperToolbar>
+                    <p:PaperIconButton ui:field="menu" icon="more-vert"
+                        attributes="paper-drawer-toggle"/>
+                    <span>Todo List</span>	
+                </p:PaperToolbar>
+                	<g:HTMLPanel ui:field="content"
+                   addStyleNames="vertical center-justified layout" />
+            </p:PaperHeaderPanel>
+        </div>
+    </p:PaperDrawerPanel>
+  </g:HTMLPanel>
 </ui:UiBinder> 

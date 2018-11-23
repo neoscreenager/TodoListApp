@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+gwtMavenModuleName=in.synergicfuturz.todolist.TodoListApp
+gwtMavenModuleShortName=TodoListApp
+lastWarOutDir=/home/neo/eclipse-workspace/TodoListApp/target/TodoListApp-1.0-SNAPSHOT
+warSrcDir=src/main/webapp
+warSrcDirIsOutput=false

@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	 xmlns:p="urn:import:com.vaadin.polymer.paper.widget"
+         xmlns:i="urn:import:com.vaadin.polymer.iron.widget">
+
+	<g:HTMLPanel>
+		<p:PaperIconItem ui:field="menuClearAll">
+        <i:IronIcon icon="delete" attributes="item-icon"/>
+        <div>Clear All</div>
+    </p:PaperIconItem>
+    <p:PaperIconItem ui:field="menuClearDone">
+        <i:IronIcon icon="clear" attributes="item-icon"/>
+        <div>Clear Done</div>
+    </p:PaperIconItem>
+    <p:PaperIconItem ui:field="menuSettings">
+        <i:IronIcon icon="settings" attributes="item-icon"/>
+        <div>Settings</div>
+    </p:PaperIconItem>
+    <p:PaperIconItem ui:field="menuAbout">
+        <i:IronIcon icon="help" attributes="item-icon"/>
+        <div>About</div>
+    </p:PaperIconItem>
+	</g:HTMLPanel>
+</ui:UiBinder> 

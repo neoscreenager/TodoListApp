@@ -34,4 +34,20 @@ public class Main extends Composite {
       addItemDialog.open();
     }
 
+    @UiHandler("confirmAddButton")
+    protected void onConfirmAddButtonClick(ClickEvent e) {
+      if (!titleInput.getValue().isEmpty()) {
+        addItem(titleInput.getValue(), descriptionInput.getValue());
+        // clear text fields
+        titleInput.setValue("");
+        descriptionInput.setValue("");
+      }
+    }
+
+    private void addItem(String title, String description) {
+      Item item = new Item();
+      item.setTitle(title);
+      item.setDescription(description);
+      content.add(item);
+    }	
   }

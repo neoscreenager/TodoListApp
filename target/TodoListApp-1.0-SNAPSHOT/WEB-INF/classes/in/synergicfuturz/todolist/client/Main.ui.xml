@@ -7,8 +7,27 @@
      paper-icon-item {
        position: relative;
      }
+      .toolbar {
+        background: #4285f4 !important;
+       }
+      .header {
+        font-size: 200%;
+        margin-left: 50px;
+        background: #4285f4 !important;
+       }
+      .content {
+        padding: 15px;
+       }
   </ui:style>
 	 <g:HTMLPanel>
+	 <style is='custom-style'>
+    	.add {
+        	position: absolute;
+        	bottom: 20px;
+        	right: 20px;
+        	--paper-fab-background: var(--paper-red-500);
+    }
+  	</style>
     <p:PaperDrawerPanel ui:field="drawerPanel">
         <div drawer="">
             <p:PaperHeaderPanel mode="seamed">
@@ -37,13 +56,15 @@
         </div>
         <div main="">
             <p:PaperHeaderPanel mode="seamed">
-                <p:PaperToolbar>
+                <p:PaperToolbar addStyleNames="{style.toolbar}">
                     <p:PaperIconButton ui:field="menu" icon="more-vert"
                         attributes="paper-drawer-toggle"/>
-                    <span>Todo List</span>	
+                    <span class="{style.header}">Todo List</span>	
                 </p:PaperToolbar>
                 	<g:HTMLPanel ui:field="content"
-                   addStyleNames="vertical center-justified layout" />
+                   addStyleNames="{style.content} vertical center-justified layout" />
+                 <p:PaperFab ui:field="addButton" icon="add"
+                addStyleNames="add"/>
             </p:PaperHeaderPanel>
         </div>
     </p:PaperDrawerPanel>
